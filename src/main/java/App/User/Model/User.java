@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Entity // This tells Hibernate to make a table out of this class
 @Data  //Lombok: adds getters and setters
 
-public class User implements Serializable {
+public class User {
 
     @Id
     @Column(name = "id",nullable = false)
