@@ -9,13 +9,17 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity // This tells Hibernate to make a table out of this class
-@Data  //Lombok: adds getters and setters
 
 public class User {
 
+    //go to localhost:8080/h2-console to access h2 database.
+    //Put this in the JDBC URL: jdbc:h2:mem:testdb
+    //username: sa, no password
+
     @Id
 //    @Column(name = "id",nullable = false)
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //use identity so h2 auto increment properly from data.sql
     private Long id;
     private String firstName;
     private String lastName;
