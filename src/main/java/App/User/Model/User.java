@@ -14,7 +14,8 @@ import java.io.Serializable;
 public class User {
 
     @Id
-    @Column(name = "id",nullable = false)
+//    @Column(name = "id",nullable = false)
+    @GeneratedValue
     private Long id;
     private String firstName;
     private String lastName;
