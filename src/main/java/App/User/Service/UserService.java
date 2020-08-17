@@ -16,10 +16,10 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getAllUsers(){
-        return new ArrayList<>(userRepository.findAll());
+        return userRepository.findAll();
     }
 
-    public Optional<User> getUser(long id){
+    public Optional<User> getUserById(long id){
         return userRepository.findById(id);
     }
 
@@ -27,8 +27,16 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void deleteUser(long id){
+    public String deleteUserById(long id){
         userRepository.deleteById(id);
+        return "User Deleted id=" + id + " ";
+    }
+
+    public User updateUser( User user){
+        User existingUser = userRepository.findById(user.getId()).orElse(null);
+        existingUser.setFirstName(user.getFirstName());
+        existingUser.setLastName(user.getLastName());
+        return userRepository.save(existingUser);
     }
 
 
