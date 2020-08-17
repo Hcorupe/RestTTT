@@ -23,13 +23,18 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String userName;
+    private String email;
+
 
     public User() {
     }
-    public User(long id, String firstName, String lastName){
+    public User(long id, String firstName, String lastName, String userName, String email){
         this.id=id;
         this.firstName=firstName;
         this.lastName=lastName;
+        this.email=email;
+        this.userName=userName;
     }
 
     public Long getId() {
@@ -55,4 +60,21 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

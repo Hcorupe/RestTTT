@@ -23,8 +23,9 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public void addUser(User user){
+    public String addUser(User user){
         userRepository.save(user);
+        return "User Added" + user.toString();
     }
 
     public String deleteUserById(long id){
